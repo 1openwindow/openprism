@@ -46,6 +46,8 @@ COPY packages/http/package.json /usr/src/prism/packages/http/
 COPY packages/http-server/package.json /usr/src/prism/packages/http-server/
 COPY packages/cli/package.json /usr/src/prism/packages/cli/
 
+COPY specification/ /tmp/specification/
+
 COPY --from=compiler /usr/src/prism/packages/core/dist /usr/src/prism/packages/core/dist
 COPY --from=compiler /usr/src/prism/packages/http/dist /usr/src/prism/packages/http/dist
 COPY --from=compiler /usr/src/prism/packages/http-server/dist /usr/src/prism/packages/http-server/dist
@@ -64,7 +66,7 @@ RUN if [ "$BUILD_TYPE" = "development" ] ; then \
     cd /usr/src/prism/packages/http && yarn link @stoplight/prism-core && yarn link && \
     cd /usr/src/prism/packages/http-server && yarn link @stoplight/prism-core && yarn link @stoplight/prism-http && yarn link && \
     cd /usr/src/prism/packages/cli && yarn link @stoplight/prism-core && yarn link @stoplight/prism-http && yarn link @stoplight/prism-http-server && yarn link ; \
-fi
+    fi
 
 EXPOSE 4010
 
