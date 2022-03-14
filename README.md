@@ -18,13 +18,13 @@ docker image -t <image-name> .
 start image
 
 ```
-docker run --rm -p 9003:4010 -t openprism:demo mock -h 127.0.0.1 /tmp/specification/storage/resource-manager/Microsoft.Storage/stable/2021-08-01/storage.json
+docker run --init -p 4010:4010 openprism:demo mock -h 0.0.0.0 /tmp/specification/storage/resource-manager/Microsoft.Storage/stable/2021-08-01/storage.json
 ```
 
 or
 
 ```
-docker run --rm -p 9003:4010 -t openprism:demo mock -h 127.0.0.1 https://raw.githubusercontent.com/1openwindow/openprism/master/examples/petstore.oas2.yaml
+docker run --init -p 4010:4010 openprism:demo mock -h 0.0.0.0 https://raw.githubusercontent.com/1openwindow/openprism/master/examples/petstore.oas2.yaml
 ```
 
 ## 🎉 Thanks
