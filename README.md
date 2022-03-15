@@ -27,6 +27,12 @@ or
 docker run --init -p 4010:4010 openprism:demo mock -h 0.0.0.0 https://raw.githubusercontent.com/1openwindow/openprism/master/examples/petstore.oas2.yaml
 ```
 
+in dev env, you may need to set the following parameter in env.
+
+```
+NODE_TLS_REJECT_UNAUTHORIZED = 0
+```
+
 ## 🎉 Thanks
 
 Prism is built on top of lots of excellent packages, and here are a few we'd like to say a special thanks to.
